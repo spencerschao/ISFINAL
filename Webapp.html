@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Random Animal Idea</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fffdf5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #3c3c3c;
+      margin-bottom: 40px;
+    }
+
+    #animalName {
+      font-size: 1.8rem;
+      color: #555;
+      margin-bottom: 30px;
+    }
+
+    button {
+      background-color: #e97f7f;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      margin: 8px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    button:hover {
+      background-color: #d35c5c;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>What should I make next?</h1>
+  <div id="animalName">Click the button to get an idea!</div>
+
+  <div class="button-group">
+    <button onclick="generateAnimal()">Get Idea</button>
+    <button onclick="goBack()">Go Back</button>
+  </div>
+
+  <script>
+    const animals = [
+      "Origami crane",
+      "Paper tiger",
+      "Cute bunny",
+      "Jumping frog",
+      "Samurai beetle",
+      "Flying bird",
+      "Sleeping cat",
+      "Elephant with flappy ears",
+      "Origami dragon",
+      "Tiny turtle"
+    ];
+
+    function generateAnimal() {
+      const random = animals[Math.floor(Math.random() * animals.length)];
+      document.getElementById("animalName").textContent = random;
+    }
+
+    function goBack() {
+      window.location.href = "blog.html";
+    }
+  </script>
+</body>
+</html>
